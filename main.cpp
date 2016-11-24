@@ -6,7 +6,6 @@
  */
 
 #include <cstdlib>
-
 #include "Image.h"
 
 using namespace std;
@@ -15,11 +14,9 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-
     Image img;
     img.loaderPGM("lena.pgm");
     img.writerPGM("newLena.pgm");
-    
     return 0;
 }
 
