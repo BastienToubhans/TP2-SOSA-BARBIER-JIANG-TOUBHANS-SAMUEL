@@ -11,6 +11,7 @@
 #include <vector>
 #include <string>
 #include <fstream>
+#include <iostream>
 using namespace std;
 
 /* JJ Loader PGM 
@@ -25,7 +26,7 @@ public:
     Image();
     Image(const Image& orig);
     virtual ~Image();
-    void writerPGM(string filename);
+    void writerPGM(char* filename);//ecrire le nom du fichier avec l'extension .PGM
     
 private:
     vector<vector<int> > image;
