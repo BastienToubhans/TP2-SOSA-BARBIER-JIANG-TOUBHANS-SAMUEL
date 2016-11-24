@@ -24,13 +24,14 @@ using namespace std;
 class Image {
 protected:
     vector<vector<int> > image;
+    
 public:
     Image();
     Image(const Image& orig);
     virtual ~Image();
     
     //Methodes
-    void loadImage(char* fichier);
+    void loaderPGM(char* fichier);
     void writerPGM(char* filename);
 
 };
