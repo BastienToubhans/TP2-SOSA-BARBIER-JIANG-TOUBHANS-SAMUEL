@@ -4,25 +4,32 @@
  *
  * Created on 24 novembre 2016, 09:48
  */
+
+#ifndef IMAGE_H
+#define	IMAGE_H
+
 #include <vector>
-#pragma once
+#include <string>
+#include <fstream>
 using namespace std;
 
 /* JJ Loader PGM 
- Jose Writer PGM
- TT Histogramme
- JJ Seuillage
- Jose Differernce
- TT Agrandissement/Reduction */
+TT Writer PGM
+Jose Histogramme
+JJ Seuillage
+Jose Differernce
+TT Agrandissement/Reduction */
 
 class Image {
 public:
     Image();
     Image(const Image& orig);
-    Image operator-(const Image &Im2);//La difference entre deux Images
-    Image histograme();
     virtual ~Image();
+    void writerPGM(string filename);
+    
 private:
     vector<vector<int> > image;
 };
+
+#endif	/* IMAGE_H */
 
