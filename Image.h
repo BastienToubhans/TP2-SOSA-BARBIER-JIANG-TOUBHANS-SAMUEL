@@ -22,9 +22,6 @@ using namespace std;
  TT Agrandissement/Reduction */
 
 class Image {
-protected:
-    vector<vector<int> > image;
-    
 public:
     Image();
     Image(const Image& orig);
@@ -32,8 +29,11 @@ public:
     
     //Methodes
     void loaderPGM(char* fichier);
-    void writerPGM(char* filename);
-
+    void writerPGM(char* filename);//ecrire le nom du fichier avec l'extension .PGM
+    void resizePGM(int newHauteur, int newLargeur);
+    
+private:
+    vector<vector<int> > image;
 };
 
 #endif	/* IMAGE_H */
