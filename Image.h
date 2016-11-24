@@ -15,24 +15,29 @@
 using namespace std;
 
 /* JJ Loader PGM 
- Jose Writer PGM
- TT Histogramme
- JJ Seuillage
- Jose Differernce
- TT Agrandissement/Reduction */
+TT Writer PGM
+Jose Histogramme
+JJ Seuillage
+Jose Differernce
+TT Agrandissement/Reduction */
 
 class Image {
 protected:
     vector<vector<int> > image;
-    
 public:
     Image();
     Image(const Image& orig);
+    
     virtual ~Image();
     
     //Methodes
-    void loaderPGM(char* fichier);
+    void loadImage(char* fichier);
     void writerPGM(char* filename);
+    void pivoterImage();//Pivoter au sens trigo
+    int getPixel(int i, int j);
+    void ajouterLigne(vector<int> ligne);
+    Image operator-(Image Im2);//La difference entre deux Images
+    Image histograme();
 
 };
 
