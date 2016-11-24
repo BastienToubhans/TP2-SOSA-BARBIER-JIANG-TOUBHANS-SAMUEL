@@ -9,27 +9,30 @@
 #define	IMAGE_H
 
 #include <vector>
-#include <string>
-#include <fstream>
 #include <iostream>
+#include <cstdlib>
+#include <fstream> //pour la lecture ecriture
 using namespace std;
 
 /* JJ Loader PGM 
-TT Writer PGM
-Jose Histogramme
-JJ Seuillage
-Jose Differernce
-TT Agrandissement/Reduction */
+ Jose Writer PGM
+ TT Histogramme
+ JJ Seuillage
+ Jose Differernce
+ TT Agrandissement/Reduction */
 
 class Image {
+protected:
+    vector<vector<int> > image;
 public:
     Image();
     Image(const Image& orig);
     virtual ~Image();
-    void writerPGM(char* filename);//ecrire le nom du fichier avec l'extension .PGM
     
-private:
-    vector<vector<int> > image;
+    //Methodes
+    void loadImage(char* fichier);
+    void writerPGM(char* filename);
+
 };
 
 #endif	/* IMAGE_H */
