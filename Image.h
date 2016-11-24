@@ -4,11 +4,8 @@
  *
  * Created on 24 novembre 2016, 09:48
  */
-
-#ifndef IMAGE_H
-#define	IMAGE_H
-
 #include <vector>
+#pragma once;
 using namespace std;
 
 /* JJ Loader PGM 
