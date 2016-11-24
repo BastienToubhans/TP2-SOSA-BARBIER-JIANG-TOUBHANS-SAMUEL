@@ -9,6 +9,8 @@
 #include "Image.h"
 
 Image::Image() {
+    //on initialise le tableau de pixel
+    //for (int i=0; i<)
 }
 
 Image::Image(const Image& orig) {
@@ -17,23 +19,28 @@ Image::Image(const Image& orig) {
 Image::~Image() {
 }
 
-void Image :: loadImage(char* filename)
+void Image :: loaderPGM(char* filename)
 {
     ifstream myFile(filename, ios::in);
     if (myFile)
     {
-        int largeur, hauteur;
+        int largeur, hauteur, valeur;
         string info;
         int maxGris;
+        vector <int> ligne;
         myFile >> info >>info; //on passe sur les infos P2 #
         myFile >> largeur >> hauteur;
         myFile >> maxGris;
+        
         for (int i=0;i< hauteur; i++)
         {
-            for (int j =0; j< largeur ; i++)
+            for (int j =0; j< largeur ; j++)
             {
-                myFile >> image[i][j];
+                myFile >> valeur;
+                ligne.push_back(valeur);
             }
+            image.push_back(ligne);
+            ligne.clear();
         }
         myFile.close();
     }
